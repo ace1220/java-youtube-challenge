@@ -133,7 +133,7 @@ class CommandParser {
           try {
             this.videoPlayer.flagVideo(command.get(1));
           } catch (ArrayIndexOutOfBoundsException f) {
-            System.out.println("Please enter FLAG_VIDEO command followed by a" +
+            System.out.println("Please enter FLAG_VIDEO command followed by a " +
                 "video_id and an optional flag reason.");
           }
         }

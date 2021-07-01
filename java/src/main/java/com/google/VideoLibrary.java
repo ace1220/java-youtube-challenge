@@ -16,6 +16,7 @@ class VideoLibrary {
 
   private final HashMap<String, Video> videos;
 
+
   VideoLibrary() {
     this.videos = new HashMap<>();
     try {
@@ -44,6 +45,17 @@ class VideoLibrary {
 
   List<Video> getVideos() {
     return new ArrayList<>(this.videos.values());
+  }
+
+  List<Video> getNonFlaggedVideos() {
+    List<Video> allVideos = getVideos();
+    List<Video> nonFlaggedVideos = new ArrayList<>();
+    for (Video video : allVideos) {
+      if (!video.isFlagged()) {
+        nonFlaggedVideos.add(video);
+      }
+    }
+    return nonFlaggedVideos;
   }
 
   /**
